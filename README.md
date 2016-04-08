@@ -10,7 +10,7 @@ DLLL is a platform that connects people living or visiting LA, where users can o
 
 ERD:
 
-image
+![Image of DLLL-ERD](images/DLLL-ERD.png)
 
 WIREFRAMES:
 
