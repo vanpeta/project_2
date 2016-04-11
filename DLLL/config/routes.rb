@@ -4,6 +4,13 @@ Rails.application.routes.draw do
   get '/login', to:'sessions#new'
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, except: [:index, :destroy]
+  get 'activities/' => 'activities#index'
+  get 'activities/new' => 'activities#new', as: :new_activity
+  get 'activities/:id' => 'activities#show', as: :activity
+  post 'activities/' => 'activities#create'
+  get 'activities/:id/edit' => 'activities#edit', as: :edit_activity
+  patch 'activities/:id' => 'activities#update'
+  delete 'activities/:id' => 'activities#destroy'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
