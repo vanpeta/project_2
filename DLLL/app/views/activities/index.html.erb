@@ -1,5 +1,5 @@
  <h1>Activities</h1>
-
+  <%= link_to 'Logout', session_path('dummy'), method: :delete %>
  <ul>
      <% @activities.each do |activity| %>
          <li>

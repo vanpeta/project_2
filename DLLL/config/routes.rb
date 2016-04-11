@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  root to: "users#new"
-  get '/register', to: 'users#new'
-  get '/login', to:'sessions#new'
+  root to: "welcoming#show"
+  get '/register' => 'users#new'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  delete '/logout' => 'seesions#destroy'
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, except: [:index, :destroy]
   get 'activities/' => 'activities#index'
