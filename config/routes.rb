@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get '/register' => 'users#new'
   get '/profile' => 'users#show', as: :profile
   get '/login' => 'sessions#new'
-
+  get '/my_profile' => 'users#my_profile'
+resources :reviews, only: [:create]
   post '/login' => 'sessions#create'
   delete '/logout' => 'seesions#destroy'
 

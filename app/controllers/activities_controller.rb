@@ -10,6 +10,7 @@ class ActivitiesController < ApplicationController
   def show
     @activity = Activity.find(params[:id])
     @organizer = @activity.user
+    @review = Review.new
   end
 
   def create
@@ -41,7 +42,7 @@ class ActivitiesController < ApplicationController
   def destroy
     @activity = Activity.find(params[:id])
     @activity.destroy
-    redirect_to activities_path
+    redirect_to home_path
   end
 
   def my_activities
@@ -50,7 +51,7 @@ class ActivitiesController < ApplicationController
 
   private
   def activities_params
-    params.require(:activity).permit(:name, :description, :date, :time, :duration)
+    params.require(:activity).permit(:name, :description, :date, :time, :duration, :user)
   end
 
 end

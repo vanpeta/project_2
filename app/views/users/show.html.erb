@@ -2,31 +2,16 @@
 
 <h1>Profile</h1>
 
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div>
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this change from being saved:</h2>
+<div> Name: <%= @user.name %> <br>
+email: <%= @user.email %>
+</div>
 
-      <ul>
-      <% @user.each do |m| %>
-        <li><%= name %></li>
-        <li><%= email %></li>
-        <li><%= password %></li>
-        <li><%= skill %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+ <ul> <%= @user.name %>'s Activities
+     <% @activities.each do |activity| %>
+         <li>
+             <strong> <%= activity.name %> </strong> - <%= activity.description %>
+             <%= link_to "More info", activity_path(activity) %>
+         </li>
+     <% end %>
+ </ul>
 
-  <div>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %><br>
-    <%= f.label :email %><br>
-    <%= f.text_field :email %><br>
-  </div>
-  <div>
-    <%= f.button do %>
-       Update
-    <% end %>
-  </div>
-<% end %>

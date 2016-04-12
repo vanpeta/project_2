@@ -4,41 +4,32 @@
 </header>
 
  <h1>Create your own activity!</h1>
-
  <%= form_for @activity do |f| %>
-
      <div>
          <%= f.label :name %>
          <%= f.text_field :name %>
      </div>
-
      <div>
          <%= f.label :description %>
          <%= f.text_field :description %>
      </div>
-
      <div>
          <%= f.label :location %>
          <%= f.text_field :location %>
      </div>
-
      <div>
          <%= f.label :date %>
          <%= f.date_select :date %>
      </div>
-
      <div>
          <%= f.label :time %>
          <%= f.time_select :time %>
      </div>
-
      <div>
          <%= f.label :duration %>
          <%= f.number_field :duration %>
      </div>
-
      <%= f.submit "Add new activity!" %>
-
  <% end %>
 
  <%= link_to "My Activities", my_activities_path %>
