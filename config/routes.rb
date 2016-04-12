@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: "welcoming#show"
+  get '/home' => 'home#show'
   get '/register' => 'users#new'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

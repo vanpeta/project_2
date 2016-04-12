@@ -1,5 +1,10 @@
- <h1>Activities</h1>
+<header>
+  <%= link_to 'Home', home_path %>
   <%= link_to 'Logout', session_path('dummy'), method: :delete %>
+</header>
+
+<body>
+<h1>Activities</h1>
  <ul>
      <% @activities.each do |activity| %>
          <li>
@@ -8,3 +13,7 @@
          </li>
      <% end %>
  </ul>
+
+ </body>
+
+
