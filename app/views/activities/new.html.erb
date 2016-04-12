@@ -1,3 +1,8 @@
+ <header>
+  <%= link_to 'Home', home_path %>
+  <%= link_to 'Logout', session_path('dummy'), method: :delete %>
+</header>
+
  <h1>Create your own activity!</h1>
 
  <%= form_for @activity do |f| %>
@@ -19,23 +24,23 @@
 
      <div>
          <%= f.label :date %>
-         <%= f.text_field :date %>
+         <%= f.date_select :date %>
      </div>
 
      <div>
          <%= f.label :time %>
-         <%= f.text_field :time %>
+         <%= f.time_select :time %>
      </div>
 
      <div>
          <%= f.label :duration %>
-         <%= f.text_field :duration %>
+         <%= f.number_field :duration %>
      </div>
 
      <%= f.submit "Add new activity!" %>
 
  <% end %>
 
- <%= link_to "Back to the list!", activities_path %>
+ <%= link_to "My Activities", my_activities_path %>
 
 

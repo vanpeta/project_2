@@ -9,13 +9,15 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
+    @organizer = @activity.user
   end
 
   def create
     @activity = Activity.new(activities_params)
+    @activity.user = current_user
 
     if @activity.save
-      redirect_to activities_path
+      redirect_to my_activities_path
     else
       render :new
     end
@@ -26,11 +28,13 @@ class ActivitiesController < ApplicationController
   end
 
   def update
-    @activity = Activity.find(params[:id])
-    if @activity.update_attributes(activities_params)
-      redirect_to activities_path
-    else
-      render :edit
+    if @activity.user == current_user
+      @activity = Activity.find(params[:id])
+      if @activity.update_attributes(activities_params)
+        redirect_to my_activities_path
+      else
+        render :edit
+      end
     end
   end
 
@@ -40,10 +44,15 @@ class ActivitiesController < ApplicationController
     redirect_to activities_path
   end
 
+  def my_activities
+    @activities = current_user.activities
+  end
+
   private
   def activities_params
     params.require(:activity).permit(:name, :description, :date, :time, :duration)
   end
+
 end
 
 

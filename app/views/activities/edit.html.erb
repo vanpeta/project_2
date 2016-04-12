@@ -19,17 +19,17 @@
 
      <div>
          <%= f.label :date %>
-         <%= f.text_field :date %>
+         <%= f.date_select :date %>
      </div>
 
      <div>
          <%= f.label :time %>
-         <%= f.text_field :time %>
+         <%= f.time_select :time %>
      </div>
 
      <div>
          <%= f.label :duration %>
-         <%= f.text_field :duration %>
+         <%= f.number_field :duration %>
      </div>
 
      <%= f.submit "Submit these changes!" %>

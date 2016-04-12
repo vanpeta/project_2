@@ -4,6 +4,8 @@
     <% flash.each do |key, msg| %>
         <div><%= msg %></div>
     <% end %>
+    <%=f.label :name %>
+    <%=f.text_field :name %>
 
     <%= f.label :email %>
     <%= f.email_field :email %>

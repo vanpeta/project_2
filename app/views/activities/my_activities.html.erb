@@ -1,7 +1,8 @@
 
-<body>
-<h1>Activities</h1>
- <ul>
+
+<%= link_to 'Create Activity', new_activity_path %>
+
+ <ul>My Activities
      <% @activities.each do |activity| %>
          <li>
              <strong> <%= activity.name %> </strong> - <%= activity.description %>
@@ -9,7 +10,5 @@
          </li>
      <% end %>
  </ul>
-
- </body>
 
 

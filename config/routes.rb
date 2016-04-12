@@ -2,18 +2,17 @@ Rails.application.routes.draw do
   root to: "welcoming#show"
   get '/home' => 'home#show'
   get '/register' => 'users#new'
+  get '/profile' => 'users#show', as: :profile
   get '/login' => 'sessions#new'
+
   post '/login' => 'sessions#create'
   delete '/logout' => 'seesions#destroy'
+
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, except: [:index, :destroy]
-  get 'activities/' => 'activities#index'
-  get 'activities/new' => 'activities#new', as: :new_activity
-  get 'activities/:id' => 'activities#show', as: :activity
-  post 'activities/' => 'activities#create'
-  get 'activities/:id/edit' => 'activities#edit', as: :edit_activity
-  patch 'activities/:id' => 'activities#update'
-  delete 'activities/:id' => 'activities#destroy'
+  resources :activities
+
+  get '/my_activities' => 'activities#my_activities', as: :my_activities
 
 
   # The priority is based upon order of creation: first created -> highest priority.

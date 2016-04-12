@@ -7,7 +7,7 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
       if @user.save
           flash[:success] = 'You are registered!'
-          redirect_to root_path
+          redirect_to home_path
       else
           flash[:error] = 'Registration has failed!'
           redirect_to new_user_path
@@ -15,10 +15,14 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = User.find (params[:id])
+    @user.update user_params
+    flash[:success] = 'Profile updated'
+    redirect_to profile_path
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
   end
 
   private
