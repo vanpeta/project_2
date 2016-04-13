@@ -5,13 +5,15 @@ Rails.application.routes.draw do
   get '/profile' => 'users#show', as: :profile
   get '/login' => 'sessions#new'
   get '/my_profile' => 'users#my_profile'
-resources :reviews, only: [:create]
+  resources :reviews, only: [:create, :show]
   post '/login' => 'sessions#create'
   delete '/logout' => 'seesions#destroy'
 
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, except: [:index, :destroy]
-  resources :activities
+  resources :activities do
+    resources :reviews
+  end
 
   get '/my_activities' => 'activities#my_activities', as: :my_activities
 

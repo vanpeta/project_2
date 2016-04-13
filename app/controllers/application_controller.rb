@@ -8,10 +8,6 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
-  def current_activity
-    @current_activity ||= Activity.find(:id) if activity.id
-  end
-
   def authorize
     if current_user.nil?
       redirect_to welcome_path, alert: 'Not authorized - you must be logged in!'

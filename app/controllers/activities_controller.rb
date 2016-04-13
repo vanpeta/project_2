@@ -11,6 +11,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
     @organizer = @activity.user
     @review = Review.new
+    @comments = Activity.find(params[:id]).reviews
   end
 
   def create

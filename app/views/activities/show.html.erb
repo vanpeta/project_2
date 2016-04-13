@@ -11,3 +11,11 @@
 
  <p>Reviews</p>
 <%= render 'reviews/form' %>
+ <ul>
+     <% @comments.each do |comment| %>
+         <li>
+             <strong> <%= comment.user %> </strong> - said: <br>
+             <%= comment.content %>
+         </li>
+     <% end %>
+ </ul>
