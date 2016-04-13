@@ -30,13 +30,12 @@ class ActivitiesController < ApplicationController
   end
 
   def update
+    @activity = Activity.find(params[:id])
     if @activity.user == current_user
-      @activity = Activity.find(params[:id])
-      if @activity.update_attributes(activities_params)
+      @activity.update_attributes(activities_params)
         redirect_to my_activities_path
-      else
+    else
         render :edit
-      end
     end
   end
 
@@ -52,7 +51,7 @@ class ActivitiesController < ApplicationController
 
   private
   def activities_params
-    params.require(:activity).permit(:name, :description, :date, :time, :duration, :user)
+    params.require(:activity).permit(:name, :description, :location, :date, :time, :duration, :user)
   end
 
 end

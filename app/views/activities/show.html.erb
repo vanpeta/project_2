@@ -1,21 +1,22 @@
-
- <h1> <%= @activity.name %> </h1>
- <p>Organizer: <%= link_to @activity.user.name, user_path(@organizer) %></p>
-<p>Duration: <%= @activity.duration %> hours</p>
- <p>Description: <br><%= @activity.description %></p>
- <% if @activity.user == current_user %>
- <%= link_to "edit", edit_activity_path(@activity) %>
- <%= link_to "delete", activity_path, method: :delete, data: {confirm: "Are you sure you want to delete this bean?"} %>
- <% end %>
- <%= link_to "Back to the list!", activities_path %>
-
+<div>
+  <h1> <%= @activity.name %> </h1>
+  <p>Organizer: <%= link_to @activity.user.name, user_path(@organizer) %></p>
+  <p>Location: <%= @activity.location %> </p>
+  <p>Duration: <%= @activity.duration %> hours</p>
+  <p>Description: <br><%= @activity.description %></p>
+  <% if @activity.user == current_user %>
+    <%= link_to "edit", edit_activity_path(@activity) %>
+    <%= link_to "delete", activity_path, method: :delete, data: {confirm: "Are you sure you want to delete this bean?"} %>
+  <% end %>
+  <%= link_to "Back to the list!", activities_path %>
+</div>
  <p>Add your review</p>
 <%= render 'reviews/form' %>
  <p>Reviews</p>
  <ul>
      <% @comments.each do |comment| %>
          <li>
-             <strong> <%= comment.user.name %> </strong> - said: <br>
+             <strong> <%= comment.user.name %> </strong> - at: <%= comment.created_at %> said:<br>
              <%= comment.content %>
          </li>
      <% end %>
