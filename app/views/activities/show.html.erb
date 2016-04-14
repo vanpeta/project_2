@@ -2,6 +2,7 @@
   <h1> <%= @activity.name %> </h1>
   <p>Organizer: <%= link_to @activity.user.name, user_path(@organizer) %></p>
   <p>Location: <%= @activity.location %> </p>
+  <p>When: <%= @activity.date %> at <%= @activity.time %> </p>
   <p>Duration: <%= @activity.duration %> hours</p>
   <p>Description: <br><%= @activity.description %></p>
   <% if @activity.user == current_user %>
@@ -18,6 +19,9 @@
          <li>
              <strong> <%= comment.user.name %> </strong> - at: <%= comment.created_at %> said:<br>
              <%= comment.content %>
+             <% if comment.user == current_user %>
+             <%= link_to "edit", edit_review_path(comment) %>
+             <% end %>
          </li>
      <% end %>
  </ul>

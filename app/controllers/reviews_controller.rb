@@ -13,7 +13,18 @@ class ReviewsController < ApplicationController
     end
   end
 
-  def show
+  def edit
+    @review = Review.find(params[:id])
+  end
+
+    def update
+    @review = Review.find(params[:id])
+    if @review.user == current_user
+      @review.update_attributes(review_params)
+        redirect_to my_activities_path(@review.activity)
+    else
+        render :edit
+    end
   end
 
   private
