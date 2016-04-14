@@ -1,20 +1,26 @@
-<h1>Register User</h1>
+<head>
+</head>
 
-<%= form_for User.new do |f| %>
-    <% flash.each do |key, msg| %>
-        <div><%= msg %></div>
-    <% end %>
-    <%=f.label :name %>
-    <%=f.text_field :name %>
-
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-
-    <%= f.submit  "Register" %>
-<% end %>
+<body>
+    <div class= "signup-form">
+        <h1>Register User</h1>
+        <%= form_for User.new do |f| %>
+        <% flash.each do |key, msg| %>
+            <div><%= msg %></div>
+        <% end %>
+        <div class='login-params'>
+        <%=f.label :name %><br>
+        <%=f.text_field :name %><br>
+        <%= f.label :email %><br>
+        <%= f.email_field :email %><br>
+        <%= f.label :password %><br>
+        <%= f.password_field :password %><br>
+        <%= f.label :password_confirmation %><br>
+        <%= f.password_field :password_confirmation %><br>
+        </div>
+        <div class="signup-button">
+        <%= f.submit  "Register", :class => 'btn btn-md btn-primary' %>
+        <% end %>
+        </div>
+    </div>
+</body>

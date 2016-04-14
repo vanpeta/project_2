@@ -1,5 +1,17 @@
+<head></head>
+<body>
+  <div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand"><%= link_to 'Profile', my_profile_path %></li>
+      <li class="sidebar-brand"><%= link_to 'My Activities', my_activities_path %></li>
+    </ul>
+  </div>
 
-<h1>Home Page</h1>
-<p>side bar with: <%= link_to 'Profile', my_profile_path %> and <%= link_to 'my activities', my_activities_path %> </p>
-<%= link_to 'Activities', activities_path %>
-<p>link to locations</p>
+  <div class='home-buttons'>
+<%= link_to 'Activities', activities_path, :class => 'btn btn-lg btn-primary' %>
+
+<button type='button' class='btn btn-lg btn-primary'>Locations</button>
+
+</div>
+</body>
+
