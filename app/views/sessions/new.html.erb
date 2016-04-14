@@ -1,15 +1,22 @@
-<h1>Login</h1>
-
-<%= form_tag sessions_path do %>
-    <% flash.each do |key, msg| %>
-        <div><%= msg %></div>
+<head>
+  <title>login</title>
+</head>
+<body>
+  <div class= "login-form">
+    <h1>Login</h1>
+    <%= form_tag sessions_path do %>
+      <% flash.each do |key, msg| %>
+    <div><%= msg %></div>
     <% end %>
-
-    <%= label_tag :email %>
-    <%= text_field_tag :email, params[:email] %>
-
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-
-    <%= submit_tag "Log in" %>
+    <div class='login-params'>
+    <%= label_tag :email %><br>
+    <%= text_field_tag :email, params[:email] %><br>
+    <%= label_tag :password %><br>
+    <%= password_field_tag :password %><br>
+    </div>
+  <div class="login-button">
+  <%= submit_tag "Log in" %>
+  </div>
 <% end %>
+</div>
+</body>

@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   resources :reviews, only: [:create, :show, :edit]
   post '/login' => 'sessions#create'
   delete '/logout' => 'seesions#destroy'
-
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, except: [:index, :destroy]
   resources :activities do

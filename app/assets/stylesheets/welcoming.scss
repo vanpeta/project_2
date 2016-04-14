@@ -1,3 +1,36 @@
 // Place all the styles related to the welcoming controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background-image: image-url('welcome-background.jpg');
+  width: 100%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.welcome-message {
+  background-color: rgba(255,255,255,0.6) ;
+  border-radius: 15px;
+  min-height: 200px;
+  padding-top: 10px;
+}
+.col-centered {
+  float: none;
+  margin: 0 auto;
+  margin-top: 170px;
+}
+.welcome {
+  margin-top: 36px;
+}
+.buttons {
+  float: none;
+  margin: 0 auto;
+  margin-top: 10px;
+  width: 250px;
+}
+.btn {
+  width: 100px;
+  margin: 0 auto;
+  float: none;
+}
+
