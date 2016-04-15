@@ -1,13 +1,11 @@
 <head>
+  <title>Sign up</title>
 </head>
 
 <body>
     <div class= "signup-form">
         <h1>Register User</h1>
         <%= form_for User.new do |f| %>
-        <% flash.each do |key, msg| %>
-            <div><%= msg %></div>
-        <% end %>
         <div class='login-params'>
         <%=f.label :name %><br>
         <%=f.text_field :name %><br>

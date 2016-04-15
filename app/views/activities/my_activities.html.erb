@@ -9,7 +9,7 @@
       </tr>
       <% @activities.each do |activity| %>
       <tr>
-        <td><%= activity.name %><%= link_to "More info", activity_path(activity) %></td>
+        <td><%= link_to activity.name, activity_path(activity) %></td>
        <% end %>
       </tr>
    </table>
