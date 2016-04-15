@@ -1,17 +1,21 @@
+<div class= 'panels'>
+  <div class='profile col-md-5'>
+    <div class= 'profile-params'>
+    <strong> Name: </strong><br>
+    <%= @user.name %> <br>
+    <strong> Contact <%= @user.name %> </strong><br>
+    <%= @user.email %> <br>
+    </div>
+  </div>
 
-
-<h1>Profile</h1>
-
-<div> Name: <%= @user.name %> <br>
-email: <%= @user.email %>
+  <div class= 'profile-activities col-md-5'>
+    <strong> <%= @user.name %>'s Activities </strong>
+    <ul class='activities-profile' style='list-style: none'>
+      <% @activities.each do |activity| %>
+      <li><%= link_to activity.name, activity_path(activity) %></li>
+       <% end %>
+   </ul>
+  </div>
 </div>
 
- <ul> <%= @user.name %>'s Activities
-     <% @activities.each do |activity| %>
-         <li>
-             <strong> <%= activity.name %> </strong> - <%= activity.description %>
-             <%= link_to "More info", activity_path(activity) %>
-         </li>
-     <% end %>
- </ul>
 

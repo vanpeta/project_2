@@ -1,14 +1,21 @@
+<body>
+  <div class='title'>
+    <h1>My Activities</h1>
+  </div>
+  <div class ='activity-table'>
+    <table class='table table-responsive'>
+      <tr>
+      <th>Name</th>
+      </tr>
+      <% @activities.each do |activity| %>
+      <tr>
+        <td><%= activity.name %><%= link_to "More info", activity_path(activity) %></td>
+       <% end %>
+      </tr>
+   </table>
+  </div>
+  <%= link_to 'New Activity', new_activity_path, :class => 'btn btn-md btn-primary'%>
+</body>
 
-
-<%= link_to 'Create Activity', new_activity_path %>
-
- <ul>My Activities
-     <% @activities.each do |activity| %>
-         <li>
-             <strong> <%= activity.name %> </strong> - <%= activity.description %>
-             <%= link_to "More info", activity_path(activity) %>
-         </li>
-     <% end %>
- </ul>
 
 

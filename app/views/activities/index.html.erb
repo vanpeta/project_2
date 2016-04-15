@@ -11,7 +11,7 @@
    </tr>
    <% @activities.each do |activity| %>
    </tr>
-      <td><%= link_to activity.name , activity_path(activity) %></td>
+      <td><%= link_to activity.name, activity_path(activity) %></td>
       <td><%= activity.date %></td>
     </tr>
      <% end %>
