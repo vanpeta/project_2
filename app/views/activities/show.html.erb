@@ -1,27 +1,42 @@
-<div>
-  <h1> <%= @activity.name %> </h1>
-  <p>Organizer: <%= link_to @activity.user.name, user_path(@organizer) %></p>
-  <p>Location: <%= @activity.location %> </p>
-  <p>When: <%= @activity.date %> at <%= @activity.time %> </p>
-  <p>Duration: <%= @activity.duration %> hours</p>
-  <p>Description: <br><%= @activity.description %></p>
-  <% if @activity.user == current_user %>
-    <%= link_to "edit", edit_activity_path(@activity) %>
-    <%= link_to "delete", activity_path, method: :delete, data: {confirm: "Are you sure you want to delete this bean?"} %>
-  <% end %>
-  <%= link_to "Back to the list!", activities_path %>
-</div>
- <p>Add your review</p>
-<%= render 'reviews/form' %>
- <p>Reviews</p>
- <ul>
-     <% @comments.each do |comment| %>
-         <li>
-             <strong> <%= comment.user.name %> </strong> - at: <%= comment.created_at %> said:<br>
-             <%= comment.content %>
-             <% if comment.user == current_user %>
-             <%= link_to "edit", edit_review_path(comment) %>
-             <% end %>
-         </li>
-     <% end %>
- </ul>
+<head></head>
+<body>
+  <div class='show-activity'>
+    <h2> <%= @activity.name %> </h2>
+    <strong>Organizer: </strong><br>
+    <%= link_to @activity.user.name, user_path(@organizer) %><br>
+    <strong>Location: </strong><br>
+    <%= @activity.location %><br>
+    <strong>When is happening: </strong><br>
+    <%= @activity.date %> at <%= @activity.time %><br>
+    <strong>Duration: </strong><br>
+    <%= @activity.duration %> hours<br>
+    <strong>Description: </strong><br>
+    <%= @activity.description %><br>
+    <% if @activity.user == current_user %>
+      <%= link_to "edit", edit_activity_path(@activity) %>
+      <%= link_to "delete", activity_path, method: :delete, data: {confirm: "Are you sure you want to delete this bean?"} %>
+    <% end %>
+  </div>
+  <div class='activity-buttons'>
+  <%= link_to "Back", activities_path, :class => 'btn btn-md btn-primary back' %>
+  </div>
+
+  <div class='show-reviews'>
+  <%= render 'reviews/form' %>
+   <p>Reviews</p>
+   <ul>
+       <% @comments.each do |comment| %>
+           <li>
+               <strong> <%= comment.user.name %> </strong> - at: <%= comment.created_at %> said:<br>
+               <%= comment.content %>
+               <% if comment.user == current_user %>
+               <%= link_to "edit", edit_review_path(comment) %>
+               <% end %>
+           </li>
+       <% end %>
+   </ul>
+   </div>
+    <div class='review-buttons'>
+  <%= link_to 'Add your review', review_path,:class => 'btn btn-md btn-primary back' %>
+  </div>
+ </body>

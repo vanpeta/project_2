@@ -5,8 +5,7 @@
     <p class= 'welcome'>Welcome to DLLL, here we connect new angelinos with locals with the same interest by offering a full range of speriences.</p>
   </div>
   <div class="buttons">
-    <button type="button" class= 'btn btn-lg btn-primary'><%= link_to ' Login '%></button>
-    <button type="button" class= 'btn btn-lg btn-primary'>
-      <%= link_to ' Sign Up ', new_user_path %></button>
+    <%= link_to ' Login ', new_session_path, :class => 'btn btn-lg btn-primary' %>
+    <%= link_to ' Sign Up ', new_user_path, :class => 'btn btn-lg btn-primary' %>
   </div>
 </body>

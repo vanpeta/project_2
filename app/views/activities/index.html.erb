@@ -1,14 +1,21 @@
 
 <body>
-<h1>Activities</h1>
- <ul>
-     <% @activities.each do |activity| %>
-         <li>
-             <strong> <%= activity.name %> </strong> - <%= activity.description %>
-             <%= link_to "More info", activity_path(activity) %>
-         </li>
+<div class='title'>
+  <h1>Activities</h1>
+</div>
+<div class ='activity-table'>
+ <table class='table table-responsive'>
+   <tr>
+     <th>Name of the Activity</th>
+     <th>Date</th>
+   </tr>
+   <% @activities.each do |activity| %>
+   </tr>
+      <td><%= link_to activity.name , activity_path(activity) %></td>
+      <td><%= activity.date %></td>
+    </tr>
      <% end %>
- </ul>
+ </div>
 
  </body>
 

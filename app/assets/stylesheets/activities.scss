@@ -1,3 +1,35 @@
 // Place all the styles related to the activities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.activity-table {
+  background-color: white;
+  border-radius: 15px;
+  margin: 0 auto;
+}
+.title {
+  color: white;
+}
+.show-activity {
+  background-color: white;
+  border-radius: 15px;
+  padding: 10px 10px 40px 10px;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 75px;
+}
+.activity-buttons {
+  margin: 0 auto;
+  float: none;
+  width: 400px;
+  text-align: center;
+}
+.show-reviews {
+  background-color: white;
+  border-radius: 15px;
+  padding: 10px 10px 40px 10px;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 75px;
+}
