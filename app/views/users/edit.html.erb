@@ -1,0 +1,23 @@
+<head>
+  <title>Edit Profile</title>
+</head>
+
+<body>
+    <div class= "signup-form">
+        <h1>Edit User</h1>
+<%= form_for User.new do |f| %>
+<div class='login-params'>
+        <%=f.label :name %><br>
+        <%=f.text_field :name %><br>
+        <%= f.label :email %><br>
+        <%= f.email_field :email %><br>
+</div>
+<div class="signup-button">
+    <% if @user == current_user %>
+    <%= f.submit "Send", :class => 'btn btn-md btn-primary' %>
+    <% end %>
+    <% end %>
+</div>
+    </div>
+  </div>
+</body>

@@ -6,5 +6,7 @@
     <strong> email: </strong><br>
     <%= @user.email %><br>
     </div>
+    <%= link_to "Edit", edit_user_path(@user), :class => 'btn btn-md btn-primary'%>
   </div>
 </div>
+

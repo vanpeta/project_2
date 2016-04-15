@@ -9,7 +9,7 @@
   </div>
 
   <div class= 'profile-activities col-md-5'>
-    <strong> <%= @user.name %>'s Activities </strong>
+    <h3> <%= @user.name %>'s Activities </h3>
     <ul class='activities-profile' style='list-style: none'>
       <% @activities.each do |activity| %>
       <li><%= link_to activity.name, activity_path(activity) %></li>
