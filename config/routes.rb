@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/profile' => 'users#show', as: :profile
   get '/login' => 'sessions#new'
   get '/my_profile' => 'users#my_profile'
-  resources :reviews, only: [:create, :show, :edit]
+  resources :reviews, only: [:create, :show, :edit, :update]
   post '/login' => 'sessions#create'
   delete '/logout' => 'seesions#destroy'
   resources :sessions, only: [:new, :create, :destroy]

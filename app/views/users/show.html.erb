@@ -1,6 +1,7 @@
 <div class= 'panels'>
   <div class='profile col-md-5'>
     <div class= 'profile-params'>
+    <%= image_tag @user.avatar.url(:thumb) %><br>
     <strong> Name: </strong><br>
     <%= @user.name %> <br>
     <strong> Contact <%= @user.name %> </strong><br>

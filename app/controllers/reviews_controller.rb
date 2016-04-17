@@ -14,14 +14,14 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    @review = Review.find(params[:id])
+    @review = this_review
   end
 
     def update
-    @review = Review.find(params[:id])
+    @review = this_review
     if @review.user == current_user
       @review.update_attributes(review_params)
-        redirect_to my_activities_path(@review.activity)
+        redirect_to activity_path (Activity.find(this_review.activity_id))
     else
         render :edit
     end
@@ -30,6 +30,9 @@ class ReviewsController < ApplicationController
   private
   def review_params
     params.require(:review).permit(:content, :user, :activity)
+  end
+  def this_review
+    Review.find(params[:id])
   end
 
 end
