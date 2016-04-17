@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: "welcoming#show"
+  get '/my_profile' => 'users#my_profile'
   get '/home' => 'home#show'
   get '/register' => 'users#new'
   get '/profile' => 'users#show', as: :profile
@@ -13,7 +14,6 @@ Rails.application.routes.draw do
   resources :activities do
     resources :reviews
   end
-
   get '/my_activities' => 'activities#my_activities', as: :my_activities
 
 

@@ -1,6 +1,7 @@
 <div class='my-profile'>
   <div class='profile'>
     <div class="profile-params">
+    <%= image_tag @user.avatar.url(:thumb) %><br>
     <strong> name: </strong><br>
     <%= @user.name %><br>
     <strong> email: </strong><br>

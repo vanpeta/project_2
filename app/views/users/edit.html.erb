@@ -5,8 +5,10 @@
 <body>
     <div class= "signup-form">
         <h1>Edit User</h1>
-<%= form_for User.new do |f| %>
-<div class='login-params'>
+
+        <%= form_for @user do |f| %>
+        <div class='login-params'>
+        <%= f.file_field :avatar %> <br>
         <%=f.label :name %><br>
         <%=f.text_field :name %><br>
         <%= f.label :email %><br>
